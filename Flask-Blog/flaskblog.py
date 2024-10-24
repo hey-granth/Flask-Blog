@@ -21,11 +21,13 @@ posts = [
 
 @app.route("/")
 def hello():
-    return render_template('home.html')
+    return render_template('home.html', posts=posts)
 
 @app.route("/about")
 def about():
-    return render_template('about.html')
+    return render_template('about.html', title='About')
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+# to run it in debug mode, use the command ```flask --app flaskblog.py --debug run```
