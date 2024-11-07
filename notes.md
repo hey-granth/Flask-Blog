@@ -1,0 +1,23 @@
+terminal commands for db
+
+- from flaskblog import db, app, Post, User
+- app.app_context().push()
+- db.create_all()
+- user_1 = User(username='Granth', email='heygranth@gmail.com', password='password')
+- db.session.add(user_1)
+- db.session.commit()
+- User.query.all()
+- User.query.first()
+- User.query.filter_by(username='Granth').all()
+- User.query.filter_by(username='Granth').first()
+- user = User.query.filter_by(username='Granth').first()
+- user.id
+- user = User.query.get(1)
+- post_1 = Post(title='Blog 1', content='First Post Content!', user_id=user.id)
+- post_2 = Post(title='Blog 2', content='Second Post Content!', user_id=user.id)
+- db.session.add(post_1)
+- db.session.add(post_2)
+- db.session.commit()
+- user.posts (it gives an empty list as the user doesn't have any posts)
+- post = Post.query.first()
+- db.drop_all() # To drop all the tables
