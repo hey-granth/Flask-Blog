@@ -1,5 +1,6 @@
 terminal commands for db
 
+- python3
 - from flaskblog import db, app, Post, User
 - app.app_context().push()
 - db.create_all()
@@ -20,4 +21,5 @@ terminal commands for db
 - db.session.commit()
 - user.posts (it gives an empty list as the user doesn't have any posts)
 - post = Post.query.first()
+- post.author
 - db.drop_all() # To drop all the tables
