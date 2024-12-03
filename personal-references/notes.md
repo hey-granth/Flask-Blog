@@ -1,4 +1,4 @@
-terminal commands for db
+# terminal commands for db
 
 - python3
 - from flaskblog import db, app, Post, User
