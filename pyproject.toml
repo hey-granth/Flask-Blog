@@ -1,0 +1,45 @@
+[tool.poetry]
+name = "flaskblog"
+version = "0.1.0"
+description = ""
+authors = ["Granth Agarwal <heygranth@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+argcomplete = "3.5.1"
+black = "24.10.0"
+blinker = "1.8.2"
+certifi = "2024.8.30"
+charset-normalizer = "3.4.0"
+click = "8.1.7"
+colorama = "0.4.6"
+dnspython = "2.7.0"
+email-validator = "2.2.0"
+flask = "3.0.3"
+flask-sqlalchemy = "3.1.1"
+flask-wtf = "1.2.2"
+greenlet = "3.1.1"
+idna = "3.10"
+itsdangerous = "2.2.0"
+jinja2 = "3.1.4"
+lorem = "0.1.1"
+markupsafe = "3.0.2"
+mypy-extensions = "1.0.0"
+packaging = "24.1"
+pathspec = "0.12.1"
+pipx = "1.7.1"
+platformdirs = "4.3.6"
+python-dotenv = "1.0.1"
+requests = "2.32.3"
+sqlalchemy = "2.0.36"
+typing-extensions = "4.12.2"
+urllib3 = "2.2.3"
+userpath = "1.9.2"
+werkzeug = "3.0.6"
+wtforms = "3.2.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
