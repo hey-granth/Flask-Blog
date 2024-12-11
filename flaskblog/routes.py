@@ -1,11 +1,7 @@
-from flask import Flask, render_template, url_for, flash, redirect
-from flask_sqlalchemy import SQLAlchemy
+from flaskblog.models import User, Post
+from flask import render_template, url_for, flash, redirect
 from flaskblog.forms import RegistrationForm, LoginForm
-
-app = Flask(__name__)
-app.config["SECRET_KEY"] = "5791628bb0b13ce0c676dfde280ba245"
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///site.db"
-db = SQLAlchemy(app)
+from flaskblog import app
 
 posts = [
     {
@@ -24,6 +20,7 @@ posts = [
 
 
 @app.route("/")
+@app.route("/home")
 def home():
     return render_template("home.html", posts=posts)
 
@@ -54,8 +51,3 @@ def login():
             flash("Login Unsuccessful. Please check username and password", "danger")
     return render_template("login.html", title="Login", form=form)
 
-
-if __name__ == "__main__":
-    app.run(debug=True)
-
-# to run it in debug mode, use the command ```flask --app flaskblog.py --debug run```
