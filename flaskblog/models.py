@@ -2,11 +2,13 @@ from flaskblog import db, login_manager
 from datetime import datetime
 from flask_login import UserMixin
 
+
 # The user_loader decorator allows for the Flask-Login extension to load a user by their ID. The user_loader callback is used to reload the user object from the user ID stored in the session.
 # It is j=just something that has to be done, specified in the documentation also.
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id))
+
 
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
