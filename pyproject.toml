@@ -77,3 +77,5 @@ virtualenv = "20.28.0"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+#poetry add $(cat requirements.txt)
