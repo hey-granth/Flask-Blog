@@ -72,6 +72,7 @@ shellingham = "1.5.4"
 tomlkit = "0.13.2"
 trove-classifiers = "2024.10.21.16"
 virtualenv = "20.28.0"
+pillow = "11.0.0"
 
 
 [build-system]
