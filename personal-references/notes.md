@@ -67,3 +67,6 @@ decorated_function = decorator(say_hello)
 decorated_function()
 ```
 ---
+## Modals
+Modals are dialog boxes or pop-ups that appear on top of the current page. They are used to display information, ask for user input, or confirm an action.
+![img.png](modal.png)
