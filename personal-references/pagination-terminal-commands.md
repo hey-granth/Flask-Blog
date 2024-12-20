@@ -1,6 +1,8 @@
 # Terminal commands for Pagination
 
 - python3
+- from flaskblog import app
+- app.app_context().push()
 - from flaskblog.models import Post
 - Post.query.all() # To get all the posts
     ```python
