@@ -13,7 +13,10 @@ from flaskblog import app, db, bcrypt
 @app.route("/")
 @app.route("/home")
 def home():
-    posts = Post.query.all()
+    page = request.args.get("page", 1, type=int)
+    # This will get the page number from the URL, if it does not exist it will default to 1
+
+    posts = Post.query.paginate(page=5, per_page=5)
     return render_template("home.html", posts=posts)
 
 
