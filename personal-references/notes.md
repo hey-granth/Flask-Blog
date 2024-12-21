@@ -129,3 +129,35 @@ pip install itsdangerous
 ### Additional Resources
 - [Official Documentation](https://itsdangerous.palletsprojects.com/)
 - [GitHub Repository](https://github.com/pallets/itsdangerous)
+---
+## Static Methods in Python
+
+A **static method** is a method that belongs to a class, not an instance of the class. It does not require access to instance (`self`) or class (`cls`) attributes or methods. Static methods are defined using the `@staticmethod` decorator.
+
+### Key Points
+- **No `self` or `cls`**: Static methods don’t take instance or class references as their first parameter.
+- **Independent**: They are like regular functions but grouped within a class for better organization.
+- **Access**: Can be called using the class name or an instance.
+
+### When to Use
+Use static methods for utility or helper functions that don’t depend on the class or instance but are conceptually related to the class.
+
+### Example
+```python
+class MathUtils:
+    @staticmethod
+    def add(a, b):
+        return a + b
+
+# Access via the class
+result1 = MathUtils.add(5, 3)
+print("Result1:", result1)  # Output: 8
+
+# Access via an instance
+utils = MathUtils()
+result2 = utils.add(10, 7)
+print("Result2:", result2)  # Output: 17
+```
+
+### Summary
+Static methods are useful for grouping related functions within a class without relying on instance or class-specific data. Use `@staticmethod` to define them.
