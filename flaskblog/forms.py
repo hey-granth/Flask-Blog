@@ -47,7 +47,8 @@ class UpdateAccountForm(FlaskForm):
     )
     email = StringField("Email", validators=[DataRequired(), Email()])
     picture = FileField(
-        "Update Profile Picture", validators=[FileAllowed(["jpg", "png", 'jpeg', 'svg'])]
+        "Update Profile Picture",
+        validators=[FileAllowed(["jpg", "png", "jpeg", "svg"])],
     )
     submit = SubmitField("Update")
 
@@ -63,25 +64,29 @@ class UpdateAccountForm(FlaskForm):
         if email.data != current_user.email:
             user = User.query.filter_by(email=email.data).first()
             if user:
-                raise ValidationError("That email is taken. Please choose a different one.")
+                raise ValidationError(
+                    "That email is taken. Please choose a different one."
+                )
 
 
 # This form is used to create a new post.
 class PostForm(FlaskForm):
-    title = StringField('Title', validators=[DataRequired()])
-    content = TextAreaField('Content', validators=[DataRequired()])
-    submit = SubmitField('Post')
+    title = StringField("Title", validators=[DataRequired()])
+    content = TextAreaField("Content", validators=[DataRequired()])
+    submit = SubmitField("Post")
 
 
 # This form is used to request a password reset.
 class RequestResetForm(FlaskForm):
-    email = StringField('Email', validators=[DataRequired(), Email()])
-    submit = SubmitField('Request Password Reset')
+    email = StringField("Email", validators=[DataRequired(), Email()])
+    submit = SubmitField("Request Password Reset")
 
     def validate_email(self, email):
         user = User.query.filter_by(email=email.data).first()
         if user is None:
-            raise ValidationError('There is no account with that email. You must register first.')
+            raise ValidationError(
+                "There is no account with that email. You must register first."
+            )
         # `raise` is used to raise an exception. In this case, it is used to raise a ValidationError exception.
 
 
