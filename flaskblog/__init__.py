@@ -19,7 +19,7 @@ db = SQLAlchemy(app)  # This is the database instance
 bcrypt = Bcrypt(app)  # This is the encryption instance
 login_manager = LoginManager(app)  # This is the login manager instance
 login_manager.login_view = (
-    "login"  # this is the function name of the route for the login page
+    "users.login"  # this is the function name of the route for the login page
 )
 login_manager.login_message_category = (
     "info"  # bootstrap class for the message (nicely coloured blue thingy)
