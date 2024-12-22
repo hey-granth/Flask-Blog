@@ -161,3 +161,14 @@ print("Result2:", result2)  # Output: 17
 
 ### Summary
 Static methods are useful for grouping related functions within a class without relying on instance or class-specific data. Use `@staticmethod` to define them.
+
+---
+## Transport Layer Security
+
+Transport Layer Security (TLS) is a cryptographic protocol that ensures secure communication over a network. It provides:
+
+- **Encryption**: Protects data from being read by unauthorized parties.
+- **Authentication**: Verifies the identity of communicating parties.
+- **Integrity**: Ensures data is not altered during transmission.
+
+TLS is widely used in web browsers, email, messaging, and other applications to protect sensitive information like passwords and credit card details. It is the successor to Secure Sockets Layer (SSL).
