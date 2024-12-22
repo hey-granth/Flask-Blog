@@ -172,3 +172,65 @@ Transport Layer Security (TLS) is a cryptographic protocol that ensures secure c
 - **Integrity**: Ensures data is not altered during transmission.
 
 TLS is widely used in web browsers, email, messaging, and other applications to protect sensitive information like passwords and credit card details. It is the successor to Secure Sockets Layer (SSL).
+
+---
+## Flask Blueprints: A Beginner-Friendly Explanation
+
+Flask Blueprints are a way to organize and structure a Flask application into smaller, reusable components. They allow you to split your app into multiple modules, making it easier to manage, especially as your project grows.
+
+### Why Use Blueprints?
+- **Modular Code**: Helps keep your application code clean and organized.
+- **Reusability**: You can reuse blueprints across different projects.
+- **Collaboration**: Makes it easier for multiple developers to work on different parts of the app.
+
+### How Do Blueprints Work?
+A blueprint is like a mini Flask application that can define routes, views, templates, and static files. Once defined, it is registered with the main Flask app.
+
+### Basic Example
+Here’s how to use Flask Blueprints:
+
+#### Step 1: Create a Blueprint
+Create a new file, e.g., `routes.py`:
+
+```python
+from flask import Blueprint
+
+# Define a blueprint
+main = Blueprint('main', __name__)
+
+@main.route('/')
+def home():
+    return "Welcome to the Home Page!"
+
+@main.route('/about')
+def about():
+    return "About Page"
+```
+
+#### Step 2: Register the Blueprint
+In your main application file (e.g., `app.py`):
+
+```python
+from flask import Flask
+from routes import main  # Import the blueprint
+
+app = Flask(__name__)
+
+# Register the blueprint
+app.register_blueprint(main)
+
+if __name__ == '__main__':
+    app.run(debug=True)
+```
+
+#### Step 3: Run the App
+When you run `app.py`, the routes defined in the blueprint will be accessible.
+
+### Key Points
+- Blueprints help organize large Flask applications.
+- You can define multiple blueprints for different parts of your app (e.g., user authentication, admin panel).
+- Blueprints can have their own templates and static files.
+
+Using Flask Blueprints is a great way to keep your app maintainable and scalable!
+
+---
