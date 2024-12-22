@@ -37,4 +37,11 @@ mail = Mail(app)  # This is the mail instance
 
 # environ is a dictionary that stores the environment variables of the system
 
-from flaskblog import routes
+from flaskblog.users.routes import users
+from flaskblog.posts.routes import posts
+from flaskblog.main.routes import main
+
+# This is the blueprint for the users, posts and main routes
+app.register_blueprint(users)
+app.register_blueprint(posts)
+app.register_blueprint(main)
