@@ -74,6 +74,7 @@ trove-classifiers = "2024.10.21.16"
 virtualenv = "20.28.0"
 pillow = "11.0.0"
 flask-mail = "0.10.0"
+gunicorn = "23.0.0"
 
 
 [build-system]
