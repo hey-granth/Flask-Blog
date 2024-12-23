@@ -2,11 +2,17 @@ from flask import Blueprint, render_template, url_for, flash, redirect, request
 from flask_login import login_user, current_user, logout_user, login_required
 from flaskblog import db, bcrypt
 from flaskblog.models import User
-from flaskblog.users.forms import RegistrationForm, LoginForm, UpdateAccountForm, RequestResetForm, ResetPasswordForm
+from flaskblog.users.forms import (
+    RegistrationForm,
+    LoginForm,
+    UpdateAccountForm,
+    RequestResetForm,
+    ResetPasswordForm,
+)
 from flaskblog.users.utils import save_picture, send_reset_email
 
 
-users = Blueprint('users', __name__)
+users = Blueprint("users", __name__)
 
 
 # route for the register page
@@ -95,7 +101,6 @@ def user_posts(username):
         .paginate(page=page, per_page=5)
     )
     return render_template("user_posts.html", posts=posts, user=user)
-
 
 
 # This function will send the reset email to the user

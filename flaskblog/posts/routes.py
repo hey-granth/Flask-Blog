@@ -70,4 +70,3 @@ def delete_post(post_id):
     db.session.commit()
     flash("Your Post has been deleted!", "success")
     return redirect(url_for("main.home"))
-
