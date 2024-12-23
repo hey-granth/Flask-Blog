@@ -1,4 +1,4 @@
-# Random Notes
+# Notes
 
 So I don't forget the stuff I learn here.
 
@@ -232,5 +232,17 @@ When you run `app.py`, the routes defined in the blueprint will be accessible.
 - Blueprints can have their own templates and static files.
 
 Using Flask Blueprints is a great way to keep your app maintainable and scalable!
+
+---
+## Common HTTP Errors
+
+### 404: Not Found
+The server couldn't find the requested resource. This typically occurs when the URL is incorrect or the resource has been moved or deleted.
+
+### 403: Forbidden
+The server understands the request but refuses to authorize it. This often happens when access permissions are insufficient.
+
+### 500: Internal Server Error
+The server encountered an unexpected condition that prevented it from fulfilling the request. This is usually caused by a server-side issue or bug.
 
 ---
